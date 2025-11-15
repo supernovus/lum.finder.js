@@ -1,0 +1,6 @@
+/node_modules/*
+/npm-debug.log
+/.gulp-cache*
+/package-lock.json
+/docs/api/*
+/docs/build/*
