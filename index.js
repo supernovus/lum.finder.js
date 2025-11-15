@@ -109,7 +109,7 @@ function makeFieldQuery(queryFields, options) {
  * - If this is true, the `matched` value will be `matched[0]`, which will be
  *   undefined if there were no matches found.
  *
- * @param {ValidateMatched} [options.validateMatched] Validation callback.
+ * @param {ValidateMatched} [options.validate] Validation callback.
  * @param {DoneCallback} [options.done] An Express-style callback function.
  * @returns {mixed} Depends on the options.
  *
