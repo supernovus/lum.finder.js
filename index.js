@@ -121,6 +121,11 @@ function makeFieldQuery(queryFields, options) {
  *
  */
 function filterData(data, query, options={}) {
+
+  if (typeof options === 'boolean') {
+    options = {single: options}
+  }
+
   let err = null, found = null, ctx = {data, query, options};
 
   if (typeof query === 'object' && query) {
@@ -128,10 +133,10 @@ function filterData(data, query, options={}) {
   }
   
   if (typeof query === 'function') {
-    found = users.filter(query);
+    found = data.filter(query);
     if (options.single) found = found[0];
   } else {
-    err = new TypeError('invalid findUsers() query');
+    err = new TypeError('invalid filterData() query');
   }
 
   if (!err && typeof options.validate === 'function') {
